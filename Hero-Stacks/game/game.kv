@@ -1,0 +1,34 @@
+#: kivy 1.0.9
+
+<MainScreen@Screen>:
+    red: 0.0
+    green: 0.0
+    blue: 0.1
+    alpha: 1.0
+
+    canvas.before:
+        Color:
+            rgba: root.red, root.green, root.blue, root.alpha
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<StartScreen@MainScreen>:
+    name: "start"
+    AnchorLayout:
+        BoxLayout:
+            size_hint: 0.4, 0.5
+            orientation: "vertical"
+            Button:
+                text: "New Game"
+            Button:
+                text: "Load Game"
+            Button:
+                text: "Settings"
+            Button:
+                text: "Quit"
+
+
+<MainWindow>:
+    StartScreen:
